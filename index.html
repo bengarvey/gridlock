@@ -5,39 +5,120 @@
     <script src="inc/jquery.js" language="javascript"></script>
     <script src="inc/jquery.dataTables.min.js" language="javascript"></script>
     <script src="inc/jquery.gridster.min.js" language="javascript"></script>
+    <link rel="stylesheet" type="text/css"  href="inc/jquery.gridster.min.css">
+    <link rel="stylesheet" type="text/css" href="inc/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
 
     <script language="javascript">
       $(function(){ //DOM Ready
        
           $(".gridster ul").gridster({
-              widget_margins: [10, 10],
-              widget_base_dimensions: [140, 140]
+              widget_margins: [20, 20],
+              widget_base_dimensions: [140, 140],
+              animate: false,
+              overflow: "auto"
           });
+
+          $(document).ready(function() {
+              $('#example').dataTable( {
+                "sScrollY": "100%",
+                "sScrollX": "100%",
+                "bPaginate": false,
+                "bInfo": false,
+                "bFilter":  false, 
+                "bAutoWidth": false,
+              } );
+          } );
        
       });
     </script>
     
     <style>
       body {
-        background-color:  #3CF;
+         background-color:  #3CF; 
+      }
+
+      .gs_w {
+        overflow: "hidden";
       }
       
       li {
-        background-color:  #DDDDDD;
+         background-color:  #DDDDDD; 
+         overflow: hidden;
       }
     </style>
   </head>
   <body>
-    <h1>Gridlock</h1>
-    <script>console.log("Javascript is working");</script>
     <div class="gridster">
+      <h1>Gridlock</h1>
+      <script>console.log("Javascript is working");</script>
         <ul>
-            <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">Ben</li>
-            <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">Jeanne</li>
-            <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">Sasha</li>
+            <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
+            <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
+            <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
      
-            <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">Owen</li>
-            <li data-row="2" data-col="2" data-sizex="2" data-sizey="2">Eva</li>
+            <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"></li>
+            <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+            <table id="example">
+              <thead>
+                <tr>
+                  <th>First</th>
+                  <th>Second</th>
+                  <th>Third</th>
+                  <th>Fourth</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <td>100</td>
+                  <td>200</td>
+                  <td>300</td>
+                  <td>400</td>
+                </tr>
+                <tr>
+                  <td>200</td>
+                  <td>300</td>
+                  <td>400</td>
+                  <td>500</td>
+                </tr>
+                <tr>
+                  <td>300</td>
+                  <td>400</td>
+                  <td>500</td>
+                  <td>600</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>500</td>
+                  <td>600</td>
+                  <td>700</td>
+                </tr>
+                <tr>
+                  <td>100</td>
+                  <td>200</td>
+                  <td>300</td>
+                  <td>400</td>
+                </tr>
+                <tr>
+                  <td>200</td>
+                  <td>300</td>
+                  <td>400</td>
+                  <td>500</td>
+                </tr>
+                <tr>
+                  <td>300</td>
+                  <td>400</td>
+                  <td>500</td>
+                  <td>600</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>500</td>
+                  <td>600</td>
+                  <td>700</td>
+                </tr>
+              </tbody>
+            </table>
+            </li>
      
             <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
             <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"></li>
